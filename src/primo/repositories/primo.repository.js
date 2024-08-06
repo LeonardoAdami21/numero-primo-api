@@ -1,16 +1,16 @@
-import { prismaConfig } from "../../config/prisma.config.js";
+import prisma from "../../config/prisma.config.js";
 
 const create = async (numero, resultado) => {
-  return await prismaConfig.nmeroPrimo.create({
+  return await prisma.nmeroPrimo.create({
     data: {
       numero,
-      resultado
+      resultado,
     },
   });
 };
 
 const findAll = async () => {
-  return await prismaConfig.nmeroPrimo.findMany();
+  return await prismaDB.nmeroPrimo.findMany();
 };
 
 export const primoRepository = {
