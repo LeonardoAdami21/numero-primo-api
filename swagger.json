@@ -1,0 +1,81 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Numero Primo API",
+    "description": "Api para mostrar o resultado de qualquer numero primo",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Primo",
+      "description": "Operações com números primos"
+    }
+  ],
+  "paths": {
+    "/numero-primo/{numero}": {
+      "get": {
+        "tags": ["Primo"],
+        "summary": "Retorna todos os números primos",
+        "description": "Retorna todos os números primos",
+        "parameters": [
+          {
+            "name": "numero",
+            "in": "path",
+            "description": "Número a ser verificado",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Número criado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "numero": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Número inválido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
