@@ -1,7 +1,7 @@
 import { primoService } from "./primo.service.js";
 
 const findAll = async (req, res) => {
-  const numero = parseInt(req.params.numero);
+  const numero = parseInt(req.body.numero);
   if (isNaN(numero) || numero <= 0) {
     return res.status(400).json({ message: "Número inválido" });
   }
