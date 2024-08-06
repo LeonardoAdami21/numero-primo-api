@@ -12,22 +12,25 @@
     }
   ],
   "paths": {
-    "/numero-primo/{numero}": {
-      "get": {
+    "/numero-primo": {
+      "post": {
         "tags": ["Primo"],
         "summary": "Retorna todos os números primos",
         "description": "Retorna todos os números primos",
-        "parameters": [
-          {
-            "name": "numero",
-            "in": "path",
-            "description": "Número a ser verificado",
-            "required": true,
-            "schema": {
-              "type": "integer"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "numero": {
+                    "type": "integer"
+                  }
+                }
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Número criado com sucesso",
