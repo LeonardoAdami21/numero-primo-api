@@ -1,8 +1,11 @@
 import { prismaConfig } from "../../config/prisma.config.js";
 
-const create = async (data) => {
+const create = async (numero, resultado) => {
   return await prismaConfig.nmeroPrimo.create({
-    data,
+    data: {
+      numero,
+      resultado
+    },
   });
 };
 
