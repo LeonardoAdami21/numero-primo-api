@@ -1,7 +1,7 @@
 import { primoService } from "./primo.service.js";
 import { describe, expect, it } from "@jest/globals";
 
-describe("PrimoService", () => {
+describe("Primo Service", () => {
   beforeEach(() => {
     let primoService = primoService;
   });
@@ -38,25 +38,24 @@ describe("PrimoService", () => {
     const result = await primoService.createPrimaFactors(numero);
     expect(result).toEqual([5, 5, 5, 5]);
   });
-  it("should return a product of first prime and second prime", async() => {
+  it("should return a product of first prime and second prime", async () => {
     const numero = 6;
     const result = await primoService.createPrimaFactors(numero);
     expect(result).toEqual([2, 3]);
   });
-  it("should return a product of primes and non-primes", async() => {
+  it("should return a product of primes and non-primes", async () => {
     const numero = 12;
     const result = await primoService.createPrimaFactors(numero);
     expect(result).toEqual([2, 2, 3]);
   });
-  it("should return a product of primes", async() => {
+  it("should return a product of primes", async () => {
     const numero = 901255;
     const result = await primoService.createPrimaFactors(numero);
     expect(result).toEqual([5, 17, 23, 461]);
   });
-  it("should return a factors include a large prime", async() => {
+  it("should return a factors include a large prime", async () => {
     const numero = 93819012551;
     const result = await primoService.createPrimaFactors(numero);
     expect(result).toEqual([11, 9539, 894119]);
   });
 });
-
